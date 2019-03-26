@@ -1,0 +1,15 @@
+server:
+  port: 10000
+
+
+logging:
+  level:
+    org.springframework.cloud.consul: DEBUG
+
+spring:
+  application:
+    name: consul-demo-provider
+  cloud:
+    consul:
+      discovery:
+        hostname: localhost:8500
