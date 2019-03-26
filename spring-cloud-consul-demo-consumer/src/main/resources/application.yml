@@ -1,5 +1,5 @@
 server:
-  port: 10000
+  port: 10001
 
 
 logging:
@@ -8,7 +8,7 @@ logging:
 
 spring:
   application:
-    name: consul-demo-provider
+    name: consul-demo-consumer
   cloud:
     consul:
       host: 127.0.0.1

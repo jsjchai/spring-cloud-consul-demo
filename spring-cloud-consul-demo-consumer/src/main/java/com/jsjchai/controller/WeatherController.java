@@ -1,9 +1,9 @@
 package com.jsjchai.controller;
 
-import com.jsjchai.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author jsjchai.
@@ -12,14 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class WeatherController {
 
     @Autowired
-    private WeatherService weatherService;
+    private RestTemplate restTemplate;
 
-    /**
-     * 获取当天天气状况
-     * @return  天气状况
-     */
-    @GetMapping("/getWeatherConditions")
-    public String getWeatherConditions(){
-        return weatherService.getWeatherConditions();
+    @GetMapping(value = "/getWeatherConditions")
+    public String getWeatherConditions() {
+        return restTemplate.getForObject("http://consul-demo-provider/getWeatherConditions", String.class);
     }
+
 }
