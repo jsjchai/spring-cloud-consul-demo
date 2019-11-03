@@ -1,0 +1,48 @@
+server:
+  port: 10000
+
+
+logging:
+  level:
+    org.springframework.cloud.consul: DEBUG
+
+spring:
+  application:
+    name: consul-demo-provider
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}
+  datasource:
+    url: jdbc:h2:mem:testdb              # 数据库名称
+    username: sa
+    password:
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 4
+      idle-timeout: 10000
+      connection-timeout: 3000
+    schema: classpath:db/create.sql
+    data: classpath:db/insert.sql
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  zipkin:
+    enabled: true
+    sender:
+      type: web
+    base-url:  http://192.168.241.134:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 12
+    lettuce:
+      pool:
+        max-active: 30

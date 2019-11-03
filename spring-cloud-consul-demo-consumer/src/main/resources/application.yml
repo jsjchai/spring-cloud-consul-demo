@@ -15,3 +15,11 @@ spring:
       port: 8500
       discovery:
         serviceName: ${spring.application.name}
+  zipkin:
+    enabled: true
+    sender:
+      type: web
+    base-url:  http://192.168.241.134:9411
+  sleuth:
+    sampler:
+      probability: 1.0

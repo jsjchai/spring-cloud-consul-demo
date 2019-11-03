@@ -1,17 +1,11 @@
-server:
-  port: 10000
+## Mybatis config
+mybatis:
+  type-aliases-package: com.jsjchai.model  # 所有Entity别名类所在包
+  mapper-locations: classpath:mybatis/mapper/*.xml
 
 
-logging:
-  level:
-    org.springframework.cloud.consul: DEBUG
-
-spring:
-  application:
-    name: consul-demo-provider
-  cloud:
-    consul:
-      host: 127.0.0.1
-      port: 8500
-      discovery:
-        serviceName: ${spring.application.name}
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: user-group
+    send-message-timeout: 300000

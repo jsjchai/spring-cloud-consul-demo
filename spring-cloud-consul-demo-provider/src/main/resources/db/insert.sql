@@ -1,0 +1,1 @@
+INSERT INTO `user` (`name`, `age`,`create_time`,`update_time`) VALUES ('张三', '26',now(),now());
