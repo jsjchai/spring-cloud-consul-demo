@@ -26,9 +26,11 @@ public class RocketMQController {
     @PostMapping("/mq/send")
     public String sendMessage(){
         Map<String, Object> headers = new HashMap<>(10);
-        headers.put(MessageConst.PROPERTY_TAGS, "tagStr");
+        headers.put(MessageConst.PROPERTY_TAGS, "test-tag");
         Message message = MessageBuilder.createMessage("msg", new MessageHeaders(headers));
         streamClient.output().send(message);
+
+        streamClient.output().send(MessageBuilder.withPayload("ddd").build());
 
         return "success";
     }

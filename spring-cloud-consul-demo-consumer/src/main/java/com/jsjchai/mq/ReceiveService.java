@@ -12,7 +12,12 @@ import org.springframework.stereotype.Service;
 public class ReceiveService {
 
     @StreamListener("input")
-    public void receiveInput1(String receiveMsg) {
+    public void receiveInput(String receiveMsg) {
        log.info("receiveMsg={}",receiveMsg);
+    }
+
+    @StreamListener("input1")
+    public void receiveInput1(String receiveMsg) {
+        log.info("receiveMsg1={}",receiveMsg);
     }
 }

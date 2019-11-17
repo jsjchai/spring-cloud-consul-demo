@@ -12,7 +12,3 @@ spring:
         output:
           destination: test-topic
           content-type: application/json
-        input:
-          destination: test-topic
-          content-type: application/json
-          group: test-group

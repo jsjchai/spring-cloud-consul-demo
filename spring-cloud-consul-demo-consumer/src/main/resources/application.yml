@@ -20,13 +20,20 @@ spring:
         binder:
           name-server: 192.168.241.134:9876
       bindings:
-        output:
-          destination: test-topic
-          content-type: application/json
         input:
           destination: test-topic
           content-type: application/json
           group: test-group
+          consumer:
+            tags: test-tag
+            orderly: false
+        input1:
+          destination: test-topic
+          content-type: application/json
+          group: test-group1
+          consumer:
+            orderly: true
+            concurrency: 20
   zipkin:
     enabled: true
     sender:

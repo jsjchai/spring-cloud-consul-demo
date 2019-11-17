@@ -10,4 +10,7 @@ public interface MySink {
 
     @Input("input")
     SubscribableChannel input();
+
+    @Input("input1")
+    SubscribableChannel input1();
 }
