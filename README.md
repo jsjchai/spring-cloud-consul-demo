@@ -4,3 +4,4 @@
 *  链路追踪 [zipkin安装](https://zipkin.io/pages/quickstart.html)
 *  接口文档 swagger http://ip:port/swagger-ui.html
 *  redis 分布式锁
+* rocketmq
