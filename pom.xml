@@ -6,11 +6,11 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.9.RELEASE</version>
+        <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.jsjchai</groupId>
+    <groupId>com.github.jsjchai</groupId>
     <artifactId>spring-cloud-consul-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-cloud-consul-demo</name>
@@ -27,7 +27,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -92,11 +92,12 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
-                <version>2.1.0.RELEASE</version>
+                <version>2.2.3.RELEASE</version>
             </dependency>
 
         </dependencies>
     </dependencyManagement>
+
 
     <build>
         <plugins>
@@ -132,7 +133,7 @@
                         <rule>
                             <element>PACKAGE</element>
                             <includes>
-                                <include>com.jsjchai.**</include>
+                                <include>com.github.jsjchai.**</include>
                             </includes>
                             <limits>
                                 <limit>
@@ -144,7 +145,7 @@
                         </rule>
                     </rules>
                 </configuration>
-                
+
             </plugin>
         </plugins>
     </build>
