@@ -2,13 +2,3 @@
 mybatis:
   type-aliases-package: com.github.jsjchai.model  # 所有Entity别名类所在包
   mapper-locations: classpath:mybatis/mapper/*.xml
-spring:
-  cloud:
-    stream:
-      rocketmq:
-        binder:
-          name-server: 127.0.0.1:9876
-      bindings:
-        output:
-          destination: test-topic
-          content-type: application/json
